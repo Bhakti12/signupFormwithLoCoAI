@@ -5,8 +5,8 @@ import {
   useNavigationType,
   useLocation,
 } from "react-router-dom";
-import Frame from "./pages/Frame";
-import SginUpFlow from "./pages/SginUpFlow";
+import SignUp from "./pages/SignUp";
+import SignUp1 from "./pages/SignUp1";
 
 function App() {
   const action = useNavigationType();
@@ -28,7 +28,7 @@ function App() {
         title = "";
         metaDescription = "";
         break;
-      case "/sgin-up-flow":
+      case "/sign-up":
         title = "";
         metaDescription = "";
         break;
@@ -50,8 +50,8 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<Frame />} />
-      <Route path="/sgin-up-flow" element={<SginUpFlow />} />
+      <Route path="/" element={<SignUp />} />
+      <Route path="/sign-up" element={<SignUp1 />} />
     </Routes>
   );
 }

@@ -3,14 +3,29 @@ import { createRoot } from "react-dom/client";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
-import "./global.css";
+import {
+  CssBaseline,
+  ThemeProvider,
+  createTheme,
+  StyledEngineProvider,
+} from "@mui/material";
+
+import GlobalStyles from "./global";
+
+const muiTheme = createTheme();
 
 const container = document.getElementById("root");
 const root = createRoot(container);
 
 root.render(
   <BrowserRouter>
-    <App />
+    <StyledEngineProvider injectFirst>
+      <ThemeProvider theme={muiTheme}>
+        <CssBaseline />
+        <GlobalStyles />
+        <App />
+      </ThemeProvider>
+    </StyledEngineProvider>
   </BrowserRouter>
 );
 
